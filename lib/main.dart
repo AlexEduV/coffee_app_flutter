@@ -17,6 +17,21 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'SF Pro',
         brightness: Brightness.dark,
+        inputDecorationTheme: InputDecorationTheme(
+          border: InputBorder.none,
+          hintStyle: TextStyle(
+            fontSize: 16.0,
+            color: Colors.grey[700],
+          ),
+        ),
+        searchBarTheme: SearchBarThemeData(
+          hintStyle: WidgetStateProperty.resolveWith((states) {
+
+            return TextStyle(
+              color: Colors.grey[700],
+            );
+          })
+        )
       ),
       home: const MyHomePage(),
     );

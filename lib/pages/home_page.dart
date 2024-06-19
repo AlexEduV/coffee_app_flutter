@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -37,9 +38,46 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      body: const Column(
+      body: Column(
         children: [
-          
+
+          const Gap(20.0),
+
+          //main text
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25.0),
+            child: Text(
+              'Find the best coffee for you',
+              style: TextStyle(
+                fontSize: 36.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+
+          const Gap(20.0),
+
+          //search bar
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: SearchBar(
+              leading: Padding(
+                padding: const EdgeInsets.only(left: 10.0),
+                child: Icon(
+                  Icons.search,
+                  color: Colors.grey[700],
+                ),
+              ),
+              hintText: 'Find Your Coffee',
+            ),
+          ),
+
+          //horizontal list view
+
+          //'special for you' section
+
+          //list view
+
         ],
       ),
     );
