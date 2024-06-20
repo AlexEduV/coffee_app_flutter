@@ -80,37 +80,39 @@ class _MyHomePageState extends State<MyHomePage> {
           const Gap(30.0),
 
           //tab bar
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: DefaultTabController(
-              length: 4,
-              child: TabBar(
-                labelColor: ProjectColors.accentColor,
-                unselectedLabelColor: Colors.grey.withOpacity(.5),
-                tabAlignment: TabAlignment.start,
-                labelPadding: const EdgeInsets.only(left: 0.0, right: 20,),
-                dividerColor: Colors.transparent,
-                isScrollable: true,
-                indicator: const CircleTabIndicator(
-                  color: ProjectColors.accentColor,
-                  radius: 3.0,
-                ),
-                onTap: (index) {
-                  setState(() {
-                    selectedTabPageIndex = index;
-                  });
-                },
-                tabs: const [
-                  Tab(text: 'Cappuccino',),
-                  Tab(text: 'Espresso',),
-                  Tab(text: 'Latte',),
-                  Tab(text: 'Flat WI',),
-                ],
+          DefaultTabController(
+            length: 4,
+            child: TabBar(
+              labelColor: ProjectColors.accentColor,
+              unselectedLabelColor: ProjectColors.hintColor,
+              tabAlignment: TabAlignment.start,
+              labelPadding: const EdgeInsets.only(left: 0.0, right: 20,),
+              dividerColor: Colors.transparent,
+              isScrollable: true,
+              indicator: const CircleTabIndicator(
+                color: ProjectColors.accentColor,
+                radius: 3.0,
               ),
+              onTap: (index) {
+                setState(() {
+                  selectedTabPageIndex = index;
+                });
+              },
+              tabs: const [
+                Tab(text: 'Cappuccino',),
+                Tab(text: 'Espresso',),
+                Tab(text: 'Latte',),
+                Tab(text: 'Flat White',),
+              ],
             ),
           ),
 
           //horizontal list view
+          SizedBox(
+            height: 300,
+            width: double.maxFinite,
+            child: getTabPageByIndex(selectedTabPageIndex),
+          ),
 
           //'special for you' section
 
