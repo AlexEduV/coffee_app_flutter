@@ -1,4 +1,5 @@
  import 'package:coffee_app_flutter/pages/home_page.dart';
+import 'package:coffee_app_flutter/style/colors.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -30,13 +31,12 @@ class MyApp extends StatelessWidget {
               color: Colors.grey[700],
             )
           ),
-          backgroundColor: WidgetStateProperty.all(const Color(0xff151920)),
-          shape: WidgetStateProperty.resolveWith((states) {
-
-            return RoundedRectangleBorder(
+          backgroundColor: WidgetStateProperty.all(ProjectColors.textInputBackground),
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16.0),
-            );
-          }),
+            ),
+          ),
 
         )
       ),

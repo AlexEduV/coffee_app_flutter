@@ -1,3 +1,4 @@
+import 'package:coffee_app_flutter/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -14,7 +15,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: Colors.black87,
+      backgroundColor: ProjectColors.pageBackground,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -39,13 +40,13 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      body: Column(
+      body: const Column(
         children: [
 
-          const Gap(20.0),
+          Gap(20.0),
 
           //main text
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(horizontal: 25.0),
             child: Text(
               'Find the best coffee for you',
@@ -56,20 +57,20 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
 
-          const Gap(20.0),
+          Gap(35.0),
 
           //search bar
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            padding: EdgeInsets.symmetric(horizontal: 25.0),
             child: SearchBar(
               leading: Padding(
-                padding: const EdgeInsets.only(left: 10.0),
+                padding: EdgeInsets.only(left: 10.0),
                 child: Icon(
                   Icons.search,
-                  color: Colors.grey[700],
+                  color:ProjectColors.hintColor,
                 ),
               ),
-              hintText: 'Find Your Coffee',
+              hintText: 'Find Your Coffee...',
             ),
           ),
 
