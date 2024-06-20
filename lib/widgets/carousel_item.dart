@@ -55,23 +55,83 @@ class CarouselItem extends StatelessWidget {
 
           const Gap(15.0),
 
-          //info column
-          Text(
-            name,
-            style: const TextStyle(
-              fontSize: 18,
-              color: Colors.white70,
-            ),
+          //name
+          Row(
+            children: [
+              Text(
+                name,
+                style: const TextStyle(
+                  fontSize: 18,
+                  color: Colors.white70,
+                ),
+              ),
+            ],
           ),
 
           //subName
-          Text(
-            subName,
-            style: const TextStyle(
-              fontSize: 15,
-              color: Colors.white38,
-            ),
-          )
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                subName,
+                style: const TextStyle(
+                  fontSize: 15,
+                  color: Colors.white38,
+                ),
+              ),
+            ],
+          ),
+
+          const Gap(10.0),
+
+          //price and plus icon
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+
+              //price
+              Row(
+                children: [
+
+                  const Text(
+                    '\$',
+                    style: TextStyle(
+                      color: ProjectColors.accentColor,
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+
+                  const Gap(5.0),
+
+                  Text(
+                    price,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+
+              //plus icon
+              Container(
+                decoration: BoxDecoration(
+                  color: ProjectColors.accentColor,
+                  borderRadius: BorderRadius.circular(16.0),
+                ),
+                child: IconButton(
+                  icon: const Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {},
+                ),
+              )
+
+            ],
+          ),
 
         ],
       ),

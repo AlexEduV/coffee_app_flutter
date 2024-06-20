@@ -109,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           //horizontal list view
           SizedBox(
-            height: 320,
+            height: 335,
             width: double.maxFinite,
             child: getTabPageByIndex(selectedTabPageIndex),
           ),
@@ -138,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
               imageSource: 'assets/images/coffee_${index + 1}.jpg',
               name: 'Cappuccino',
               subName: 'With Oat Milk',
-              price: '0.00\$',
+              price: '4.20',
               stars: '4.5',
             ),
           );
