@@ -21,17 +21,18 @@ class CarouselItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
 
         //picture
         Container(
-          height: 300,
-          width: 200,
-          margin: const EdgeInsets.only(right: 10.0,),
+          height: 180,
+          width: 180,
+          margin: const EdgeInsets.only(right: 20.0,),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Colors.white,
             image: DecorationImage(
               image: AssetImage(imageSource),
               fit: BoxFit.cover,
@@ -39,34 +40,25 @@ class CarouselItem extends StatelessWidget {
           ),
         ),
 
+        const Gap(20.0),
+
         //info column
-        Positioned(
-          bottom: 10,
-          left: 10,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+        Text(
+          name,
+          style: const TextStyle(
+            fontSize: 18,
+            color: Colors.white70,
+          ),
+        ),
 
-              //name
-              Text(
-                name,
-                style: const TextStyle(
-                  fontSize: 18,
-                ),
-              ),
+        const Gap(3.0),
 
-              const Gap(3.0),
-
-              //subName
-              Text(
-                subName,
-                style: const TextStyle(
-                  fontSize: 15,
-                ),
-              ),
-
-
-            ],
+        //subName
+        Text(
+          subName,
+          style: const TextStyle(
+            fontSize: 15,
+            color: Colors.white60,
           ),
         )
 
