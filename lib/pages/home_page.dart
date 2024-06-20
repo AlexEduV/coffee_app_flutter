@@ -14,6 +14,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      backgroundColor: Colors.black87,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -49,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Text(
               'Find the best coffee for you',
               style: TextStyle(
-                fontSize: 36.0,
+                fontSize: 34.0,
                 fontWeight: FontWeight.bold,
               ),
             ),

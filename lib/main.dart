@@ -25,12 +25,19 @@ class MyApp extends StatelessWidget {
           ),
         ),
         searchBarTheme: SearchBarThemeData(
-          hintStyle: WidgetStateProperty.resolveWith((states) {
-
-            return TextStyle(
+          hintStyle: WidgetStateProperty.all(
+            TextStyle(
               color: Colors.grey[700],
+            )
+          ),
+          backgroundColor: WidgetStateProperty.all(const Color(0xff151920)),
+          shape: WidgetStateProperty.resolveWith((states) {
+
+            return RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16.0),
             );
-          })
+          }),
+
         )
       ),
       home: const MyHomePage(),
