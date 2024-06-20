@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
               color: Colors.grey[700],
             )
           ),
-          backgroundColor: WidgetStateProperty.all(ProjectColors.textInputBackground),
+          backgroundColor: WidgetStateProperty.all(ProjectColors.textInputBackgroundColor),
           shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16.0),

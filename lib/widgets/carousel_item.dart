@@ -1,3 +1,4 @@
+import 'package:coffee_app_flutter/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -24,27 +25,27 @@ class CarouselItem extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16.0),
-        gradient: LinearGradient(
+        borderRadius: BorderRadius.circular(39.0),
+        gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            Colors.grey[800]!,
+            ProjectColors.accentDarkColor,
             Colors.black,
           ]
         )
       ),
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(15.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 
           //picture
           Container(
-            height: 180,
-            width: 180,
+            height: 150,
+            width: 150,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(24.0),
               image: DecorationImage(
                 image: AssetImage(imageSource),
                 fit: BoxFit.cover,
