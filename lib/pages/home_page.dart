@@ -109,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           //horizontal list view
           SizedBox(
-            height: 300,
+            height: 320,
             width: double.maxFinite,
             child: getTabPageByIndex(selectedTabPageIndex),
           ),
@@ -127,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget getTabPageByIndex(int index) {
 
     if (index == 0) {
-      return ListView.builder(
+      return ListView.separated(
         itemCount: 2,
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0,),
@@ -142,6 +142,9 @@ class _MyHomePageState extends State<MyHomePage> {
               stars: '4.5',
             ),
           );
+        },
+        separatorBuilder: (context, index) {
+          return const Gap(20.0);
         },
       );
     }

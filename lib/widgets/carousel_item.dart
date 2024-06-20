@@ -22,47 +22,58 @@ class CarouselItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16.0),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Colors.grey[800]!,
+            Colors.black,
+          ]
+        )
+      ),
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
 
-        //picture
-        Container(
-          height: 180,
-          width: 180,
-          margin: const EdgeInsets.only(right: 20.0,),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            image: DecorationImage(
-              image: AssetImage(imageSource),
-              fit: BoxFit.cover,
+          //picture
+          Container(
+            height: 180,
+            width: 180,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              image: DecorationImage(
+                image: AssetImage(imageSource),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-        ),
 
-        const Gap(20.0),
+          const Gap(15.0),
 
-        //info column
-        Text(
-          name,
-          style: const TextStyle(
-            fontSize: 18,
-            color: Colors.white70,
+          //info column
+          Text(
+            name,
+            style: const TextStyle(
+              fontSize: 18,
+              color: Colors.white70,
+            ),
           ),
-        ),
 
-        const Gap(3.0),
+          //subName
+          Text(
+            subName,
+            style: const TextStyle(
+              fontSize: 15,
+              color: Colors.white38,
+            ),
+          )
 
-        //subName
-        Text(
-          subName,
-          style: const TextStyle(
-            fontSize: 15,
-            color: Colors.white60,
-          ),
-        )
-
-      ],
+        ],
+      ),
     );
   }
 }
