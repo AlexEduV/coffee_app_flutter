@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
               borderRadius: BorderRadius.circular(16.0),
             ),
           ),
+          shadowColor: WidgetStateProperty.all(Colors.transparent),
 
         )
       ),
