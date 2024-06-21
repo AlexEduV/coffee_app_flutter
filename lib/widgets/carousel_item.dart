@@ -60,9 +60,9 @@ class CarouselItem extends StatelessWidget {
                 top: 0,
                 right: 0,
                 child: Container(
-                  decoration: const BoxDecoration(
-                    color: Colors.black54,
-                    borderRadius: BorderRadius.only(
+                  decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.7),
+                    borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(20.0),
                       topRight: Radius.circular(24.0),
                     ),
