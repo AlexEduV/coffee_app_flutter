@@ -23,12 +23,12 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Padding(
-            padding: EdgeInsets.only(left: 25.0),
-            child: FaIcon(
-              FontAwesomeIcons.grip,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 25.0),
+          child: IconButton(
+            onPressed: () {},
+            icon: const FaIcon(
+                FontAwesomeIcons.grip,
             ),
           ),
         ),
