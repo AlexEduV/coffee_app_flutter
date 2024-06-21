@@ -45,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 
           const Gap(20.0),
@@ -53,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 25.0),
             child: Text(
-              'Find the best coffee for you',
+              'Find the best \ncoffee for you',
               style: TextStyle(
                 fontSize: 34.0,
                 fontWeight: FontWeight.bold,
@@ -86,6 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: TabBar(
               labelColor: ProjectColors.accentColor,
               unselectedLabelColor: ProjectColors.hintColor,
+              padding: EdgeInsets.symmetric(horizontal: 25.0),
               labelStyle: const TextStyle(
                 fontWeight: FontWeight.w500,
                 fontSize: 16.0,
