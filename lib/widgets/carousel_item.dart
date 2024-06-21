@@ -18,17 +18,17 @@ class CarouselItem extends StatelessWidget {
     return Container(
       width: 180,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(41.0),
+        borderRadius: BorderRadius.circular(30.0),
         gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
             ProjectColors.accentDarkColor,
             Colors.black,
-          ]
-        )
+          ],
+        ),
       ),
-      padding: const EdgeInsets.all(17.0),
+      padding: const EdgeInsets.all(15.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -40,7 +40,7 @@ class CarouselItem extends StatelessWidget {
               Container(
                 height: 146,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(24.0),
+                  borderRadius: BorderRadius.circular(15.0),
                   image: DecorationImage(
                     image: AssetImage(coffee.imageSource),
                     fit: BoxFit.cover,
@@ -56,7 +56,7 @@ class CarouselItem extends StatelessWidget {
                     color: Colors.black.withOpacity(0.7),
                     borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(20.0),
-                      topRight: Radius.circular(24.0),
+                      topRight: Radius.circular(15.0),
                     ),
                   ),
                   padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 5.0),

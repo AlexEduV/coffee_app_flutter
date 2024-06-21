@@ -119,14 +119,32 @@ class _MyHomePageState extends State<MyHomePage> {
 
           //horizontal list view
           SizedBox(
-            height: 335,
             width: double.maxFinite,
             child: getTabPageByIndex(selectedTabPageIndex),
           ),
 
           //'special for you' section
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25.0),
+            child: Text(
+              'Special for you',
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 15.0,
+              ),
+            ),
+          ),
 
           //list view
+          Expanded(
+            child: ListView.builder(
+              itemCount: 1,
+              itemBuilder: (context, index) {
+                
+              }
+            ),
+
+          )
 
         ],
       ),
