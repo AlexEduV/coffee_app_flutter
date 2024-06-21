@@ -137,11 +137,13 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
 
+            const Gap(12.0),
+
             //list view
             const SpecialsItem(
               title: '5 coffee beans you must try!',
               text: 'text',
-              imageSource: 'imageSource',
+              imageSource: '${DataModel.assetPath}coffee_3.jpg',
             ),
 
           ],
@@ -188,7 +190,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     if (index == 0) {
       return ListView.separated(
-        itemCount: 2,
+        itemCount: coffeeData.length,
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0,),
         itemBuilder: (BuildContext context, int index) {

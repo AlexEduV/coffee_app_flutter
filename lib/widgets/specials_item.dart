@@ -1,5 +1,6 @@
 import 'package:coffee_app_flutter/style/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class SpecialsItem extends StatelessWidget {
 
@@ -32,8 +33,28 @@ class SpecialsItem extends StatelessWidget {
       child: Row(
         children: [
 
+          //photo
+          Container(
+            height: 146,
+            width: 146,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15.0),
+              image: DecorationImage(
+                image: AssetImage(imageSource),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+
+          const Gap(10.0),
+
+          //text column
           Text(
             title,
+            maxLines: 3,
+            style: const TextStyle(
+              fontSize: 18.0,
+            ),
           ),
 
         ],
