@@ -61,7 +61,7 @@ class CarouselItem extends StatelessWidget {
               Text(
                 name,
                 style: const TextStyle(
-                  fontSize: 18,
+                  fontSize: 18.0,
                   color: Colors.white70,
                 ),
               ),
@@ -74,7 +74,7 @@ class CarouselItem extends StatelessWidget {
               Text(
                 subName,
                 style: const TextStyle(
-                  fontSize: 15,
+                  fontSize: 15.0,
                   color: Colors.white38,
                 ),
               ),
@@ -92,7 +92,7 @@ class CarouselItem extends StatelessWidget {
                 '\$',
                 style: TextStyle(
                   color: ProjectColors.accentColor,
-                  fontSize: 16.0,
+                  fontSize: 18.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -104,7 +104,7 @@ class CarouselItem extends StatelessWidget {
                   price,
                   style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 16.0,
+                    fontSize: 18.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
