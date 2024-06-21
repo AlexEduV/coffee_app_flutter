@@ -42,15 +42,55 @@ class CarouselItem extends StatelessWidget {
         children: [
 
           //picture
-          Container(
-            height: 146,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(24.0),
-              image: DecorationImage(
-                image: AssetImage(imageSource),
-                fit: BoxFit.cover,
+          Stack(
+            children: [
+
+              Container(
+                height: 146,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(24.0),
+                  image: DecorationImage(
+                    image: AssetImage(imageSource),
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
-            ),
+
+              Positioned(
+                top: 0,
+                right: 0,
+                child: Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.black54,
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(20.0),
+                      topRight: Radius.circular(24.0),
+                    ),
+                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 5.0),
+                  child: Row(
+                    children: [
+
+                      //star icon
+                      const Icon(
+                        Icons.star,
+                        color: ProjectColors.accentColor,
+                      ),
+
+                      const Gap(4.0),
+
+                      //star value
+                      Text(
+                        stars,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  )
+                ),
+              )
+            ],
           ),
 
           const Gap(15.0),
