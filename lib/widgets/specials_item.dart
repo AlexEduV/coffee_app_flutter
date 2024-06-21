@@ -1,3 +1,4 @@
+import 'package:coffee_app_flutter/helpers/text_helper.dart';
 import 'package:coffee_app_flutter/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -5,13 +6,18 @@ import 'package:gap/gap.dart';
 class SpecialsItem extends StatelessWidget {
 
   final String title;
-  final String text;
+  final String description;
   final String imageSource;
+  final Function() onReadMoreButtonPressed;
+  final bool isExpanded;
 
-  const SpecialsItem({
+
+  SpecialsItem({
     required this.title,
-    required this.text,
+    required this.description,
     required this.imageSource,
+    required this.isExpanded,
+    required this.onReadMoreButtonPressed,
     super.key,
   });
 
@@ -31,6 +37,7 @@ class SpecialsItem extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(15.0),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 
           //photo
@@ -51,6 +58,7 @@ class SpecialsItem extends StatelessWidget {
           //text column
           Flexible(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
 
                 Text(
@@ -63,7 +71,33 @@ class SpecialsItem extends StatelessWidget {
                 const Gap(10.0),
 
                 Text(
-                  text,
+                  description,
+                  maxLines: isExpanded ? 10 : 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+
+                const Gap(4.0),
+
+                Visibility(
+                  visible: !isExpanded && hasTextOverflow(
+                    description,
+                    Theme.of(context).textTheme.bodyMedium!,
+                    MediaQuery.of(context).textScaleFactor,
+                    maxWidth: MediaQuery.of(context).size.width,
+                  ),
+                  child: InkWell(
+                    onTap: onReadMoreButtonPressed,
+                    child: Row(
+                      children: [
+
+                        Text(
+                          'Read More',
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),

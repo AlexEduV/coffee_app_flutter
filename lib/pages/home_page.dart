@@ -20,6 +20,8 @@ class _MyHomePageState extends State<MyHomePage> {
   int selectedTabPageIndex = 0;
   List<Coffee> coffeeData = DataModel.getInitCoffeeData();
 
+  bool isSpecialExpanded = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -140,10 +142,16 @@ class _MyHomePageState extends State<MyHomePage> {
             const Gap(12.0),
 
             //list view
-            const SpecialsItem(
+            SpecialsItem(
               title: '5 coffee beans you must try!',
-              text: 'The coffee beans are roasted in an environmentally friendly way. This coffee tastes particularly mild and aromatic. The beans are made from 100% Arabica and are available in many different varieties with a particularly strong aroma.',
+              description: 'The coffee beans are roasted in an environmentally friendly way. This coffee tastes particularly mild and aromatic. The beans are made from 100% Arabica and are available in many different varieties with a particularly strong aroma.',
               imageSource: '${DataModel.assetPath}coffee_3.jpg',
+              isExpanded: isSpecialExpanded,
+              onReadMoreButtonPressed: () {
+                setState(() {
+                  isSpecialExpanded = !isSpecialExpanded;
+                });
+              },
             ),
 
           ],
