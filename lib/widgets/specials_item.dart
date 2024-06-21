@@ -46,14 +46,26 @@ class SpecialsItem extends StatelessWidget {
             ),
           ),
 
-          const Gap(10.0),
+          const Gap(15.0),
 
           //text column
-          Text(
-            title,
-            maxLines: 3,
-            style: const TextStyle(
-              fontSize: 18.0,
+          Flexible(
+            child: Column(
+              children: [
+
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 18.0,
+                  ),
+                ),
+
+                const Gap(10.0),
+
+                Text(
+                  text,
+                ),
+              ],
             ),
           ),
 

@@ -142,7 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
             //list view
             const SpecialsItem(
               title: '5 coffee beans you must try!',
-              text: 'text',
+              text: 'The coffee beans are roasted in an environmentally friendly way. This coffee tastes particularly mild and aromatic. The beans are made from 100% Arabica and are available in many different varieties with a particularly strong aroma.',
               imageSource: '${DataModel.assetPath}coffee_3.jpg',
             ),
 
