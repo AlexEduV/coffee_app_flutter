@@ -24,6 +24,7 @@ class CarouselItem extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
+      width: 180,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(39.0),
         gradient: const LinearGradient(
@@ -70,7 +71,6 @@ class CarouselItem extends StatelessWidget {
 
           //subName
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
                 subName,
@@ -86,33 +86,29 @@ class CarouselItem extends StatelessWidget {
 
           //price and plus icon
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
 
               //price
-              Row(
-                children: [
+              const Text(
+                '\$',
+                style: TextStyle(
+                  color: ProjectColors.accentColor,
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
 
-                  const Text(
-                    '\$',
-                    style: TextStyle(
-                      color: ProjectColors.accentColor,
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.bold,
-                    ),
+              const Gap(10.0),
+
+              Expanded(
+                child: Text(
+                  price,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
                   ),
-
-                  const Gap(5.0),
-
-                  Text(
-                    price,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
+                ),
               ),
 
               //plus icon
@@ -124,11 +120,12 @@ class CarouselItem extends StatelessWidget {
                 child: IconButton(
                   icon: const Icon(
                     Icons.add,
+                    size: 24,
                     color: Colors.white,
                   ),
                   onPressed: () {},
                 ),
-              )
+              ),
 
             ],
           ),
