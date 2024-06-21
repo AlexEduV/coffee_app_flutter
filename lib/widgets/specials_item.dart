@@ -87,12 +87,14 @@ class SpecialsItem extends StatelessWidget {
                   ),
                   child: InkWell(
                     onTap: onReadMoreButtonPressed,
-                    child: Row(
+                    child: const Row(
                       children: [
 
                         Text(
                           'Read More',
-                          style: Theme.of(context).textTheme.bodySmall,
+                          style: TextStyle(
+                            color: ProjectColors.accentColor,
+                          ),
                         ),
 
                       ],
