@@ -116,7 +116,7 @@ class CarouselItem extends StatelessWidget {
               Text(
                 subName,
                 style: const TextStyle(
-                  fontSize: 15.0,
+                  fontSize: 13.0,
                   color: Colors.white38,
                 ),
               ),
