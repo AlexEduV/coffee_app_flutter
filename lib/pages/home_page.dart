@@ -99,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontWeight: FontWeight.w500,
                   fontSize: 16.0,
                 ),
-                labelPadding: const EdgeInsets.only(left: 0.0, right: 20,),
+                labelPadding: const EdgeInsets.only(left: 10.0, right: 10.0,),
                 dividerColor: Colors.transparent,
                 tabAlignment: TabAlignment.start,
                 isScrollable: true,
