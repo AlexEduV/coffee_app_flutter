@@ -152,6 +152,8 @@ class CarouselItem extends StatelessWidget {
 
               //plus icon
               Container(
+                height: 40,
+                width: 40,
                 decoration: BoxDecoration(
                   color: ProjectColors.accentColor,
                   borderRadius: BorderRadius.circular(16.0),
@@ -159,7 +161,7 @@ class CarouselItem extends StatelessWidget {
                 child: IconButton(
                   icon: const Icon(
                     Icons.add,
-                    size: 24,
+                    size: 22,
                     color: Colors.white,
                   ),
                   onPressed: () {},
