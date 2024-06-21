@@ -20,15 +20,24 @@ class SpecialsItem extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30.0),
         gradient: const LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              ProjectColors.accentDarkColor,
-              Colors.black,
-            ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            ProjectColors.accentDarkColor,
+            Colors.black,
+          ],
         ),
       ),
+      padding: const EdgeInsets.all(15.0),
+      child: Row(
+        children: [
 
+          Text(
+            title,
+          ),
+
+        ],
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:coffee_app_flutter/model/data_model.dart';
 import 'package:coffee_app_flutter/style/colors.dart';
+import 'package:coffee_app_flutter/widgets/specials_item.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
@@ -47,106 +48,104 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
 
-          const Gap(20.0),
+            const Gap(20.0),
 
-          //main text
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25.0),
-            child: Text(
-              'Find the best\ncoffee for you',
-              style: TextStyle(
-                fontSize: 34.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-
-          const Gap(35.0),
-
-          //search bar
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25.0),
-            child: SearchBar(
-              leading: Padding(
-                padding: EdgeInsets.only(left: 10.0),
-                child: Icon(
-                  Icons.search,
-                  color: ProjectColors.hintColor,
+            //main text
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25.0),
+              child: Text(
+                'Find the best\ncoffee for you',
+                style: TextStyle(
+                  fontSize: 34.0,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              hintText: 'Find Your Coffee...',
             ),
-          ),
 
-          const Gap(30.0),
+            const Gap(35.0),
 
-          //tab bar
-          DefaultTabController(
-            length: 4,
-            child: TabBar(
-              labelColor: ProjectColors.accentColor,
-              unselectedLabelColor: ProjectColors.hintColor,
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              labelStyle: const TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 16.0,
-              ),
-              labelPadding: const EdgeInsets.only(left: 0.0, right: 20,),
-              dividerColor: Colors.transparent,
-              tabAlignment: TabAlignment.start,
-              isScrollable: true,
-              indicator: const CircleTabIndicator(
-                color: ProjectColors.accentColor,
-                radius: 3.0,
-              ),
-              onTap: (index) {
-                setState(() {
-                  selectedTabPageIndex = index;
-                });
-              },
-              tabs: const [
-                Tab(text: 'Cappuccino',),
-                Tab(text: 'Espresso',),
-                Tab(text: 'Latte',),
-                Tab(text: 'Flat White',),
-              ],
-            ),
-          ),
-
-          //horizontal list view
-          SizedBox(
-            width: double.maxFinite,
-            child: getTabPageByIndex(selectedTabPageIndex),
-          ),
-
-          //'special for you' section
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25.0),
-            child: Text(
-              'Special for you',
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 15.0,
+            //search bar
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25.0),
+              child: SearchBar(
+                leading: Padding(
+                  padding: EdgeInsets.only(left: 10.0),
+                  child: Icon(
+                    Icons.search,
+                    color: ProjectColors.hintColor,
+                  ),
+                ),
+                hintText: 'Find your coffee:',
               ),
             ),
-          ),
 
-          //list view
-          Expanded(
-            child: ListView.builder(
-              itemCount: 1,
-              itemBuilder: (context, index) {
-                
-              }
+            const Gap(30.0),
+
+            //tab bar
+            DefaultTabController(
+              length: 4,
+              child: TabBar(
+                labelColor: ProjectColors.accentColor,
+                unselectedLabelColor: ProjectColors.hintColor,
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                labelStyle: const TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16.0,
+                ),
+                labelPadding: const EdgeInsets.only(left: 0.0, right: 20,),
+                dividerColor: Colors.transparent,
+                tabAlignment: TabAlignment.start,
+                isScrollable: true,
+                indicator: const CircleTabIndicator(
+                  color: ProjectColors.accentColor,
+                  radius: 3.0,
+                ),
+                onTap: (index) {
+                  setState(() {
+                    selectedTabPageIndex = index;
+                  });
+                },
+                tabs: const [
+                  Tab(text: 'Cappuccino',),
+                  Tab(text: 'Espresso',),
+                  Tab(text: 'Latte',),
+                  Tab(text: 'Flat White',),
+                ],
+              ),
             ),
 
-          )
+            //horizontal list view
+            SizedBox(
+              width: double.maxFinite,
+              child: getTabPageByIndex(selectedTabPageIndex),
+            ),
 
-        ],
+            //'special for you' section
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25.0),
+              child: Text(
+                'Special for you',
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15.0,
+                ),
+              ),
+            ),
+
+            //list view
+            const SpecialsItem(
+              title: '5 coffee beans you must try!',
+              text: 'text',
+              imageSource: 'imageSource',
+            ),
+
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
