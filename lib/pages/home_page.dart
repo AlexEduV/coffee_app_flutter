@@ -85,7 +85,10 @@ class _MyHomePageState extends State<MyHomePage> {
             child: TabBar(
               labelColor: ProjectColors.accentColor,
               unselectedLabelColor: ProjectColors.hintColor,
-              labelStyle: const TextStyle(fontWeight: FontWeight.w500),
+              labelStyle: const TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 16.0,
+              ),
               labelPadding: const EdgeInsets.only(left: 0.0, right: 20,),
               dividerColor: Colors.transparent,
               tabAlignment: TabAlignment.start,
@@ -129,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     if (index == 0) {
       return ListView.separated(
-        itemCount: 3,
+        itemCount: 2,
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0,),
         itemBuilder: (BuildContext context, int index) {
@@ -145,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
           );
         },
         separatorBuilder: (context, index) {
-          return const Gap(20.0);
+          return const Gap(25.0);
         },
       );
     }
