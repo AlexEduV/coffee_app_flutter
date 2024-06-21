@@ -121,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             //horizontal list view
             SizedBox(
-              width: double.maxFinite,
+              height: 335,
               child: getTabPageByIndex(selectedTabPageIndex),
             ),
 
