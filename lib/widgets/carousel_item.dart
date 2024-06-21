@@ -75,6 +75,7 @@ class CarouselItem extends StatelessWidget {
                       const Icon(
                         Icons.star,
                         color: ProjectColors.accentColor,
+                        size: 20,
                       ),
 
                       const Gap(4.0),
@@ -84,6 +85,7 @@ class CarouselItem extends StatelessWidget {
                         stars,
                         style: const TextStyle(
                           fontWeight: FontWeight.w600,
+                          fontSize: 12.0,
                         ),
                       ),
                     ],
