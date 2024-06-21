@@ -1,5 +1,6 @@
 import 'package:coffee_app_flutter/style/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 
 import '../widgets/carousel_item.dart';
@@ -26,8 +27,8 @@ class _MyHomePageState extends State<MyHomePage> {
           onPressed: () {},
           icon: const Padding(
             padding: EdgeInsets.only(left: 25.0),
-            child: Icon(
-                Icons.menu
+            child: FaIcon(
+              FontAwesomeIcons.grip,
             ),
           ),
         ),
@@ -128,30 +129,31 @@ class _MyHomePageState extends State<MyHomePage> {
         currentIndex: 0,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: ProjectColors.accentColor,
+        iconSize: 22,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
+            icon: FaIcon(
+              FontAwesomeIcons.house,
             ),
             label: 'Home'
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.shopping_bag,
+            icon: FaIcon(
+              FontAwesomeIcons.basketShopping,
             ),
             label: 'Store'
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.favorite,
+            icon: FaIcon(
+              FontAwesomeIcons.solidHeart,
             ),
             label: 'Favorites'
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.notifications,
+            icon: FaIcon(
+              FontAwesomeIcons.solidBell,
             ),
-            label: 'Favorites',
+            label: 'Notifications',
           ),
 
         ],

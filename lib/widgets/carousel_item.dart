@@ -1,5 +1,6 @@
 import 'package:coffee_app_flutter/style/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 
 class CarouselItem extends StatelessWidget {
@@ -72,10 +73,10 @@ class CarouselItem extends StatelessWidget {
                     children: [
 
                       //star icon
-                      const Icon(
-                        Icons.star,
+                      const FaIcon(
+                        FontAwesomeIcons.solidStar,
                         color: ProjectColors.accentColor,
-                        size: 20,
+                        size: 15,
                       ),
 
                       const Gap(4.0),
@@ -158,7 +159,7 @@ class CarouselItem extends StatelessWidget {
                 width: 40,
                 decoration: BoxDecoration(
                   color: ProjectColors.accentColor,
-                  borderRadius: BorderRadius.circular(16.0),
+                  borderRadius: BorderRadius.circular(14.0),
                 ),
                 child: IconButton(
                   icon: const Icon(
