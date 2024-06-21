@@ -1,9 +1,11 @@
+import 'package:coffee_app_flutter/model/data_model.dart';
 import 'package:coffee_app_flutter/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 
-import '../widgets/carousel_item.dart';
+import 'package:coffee_app_flutter/model/coffee.dart';
+import 'package:coffee_app_flutter/widgets/carousel_item.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -15,6 +17,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   int selectedTabPageIndex = 0;
+  List<Coffee> coffeeData = DataModel.getInitCoffeeData();
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: IconButton(
               onPressed: () {},
               icon: const Icon(
-                  Icons.person
+                Icons.person,
               ),
             ),
           ),
@@ -54,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 25.0),
             child: Text(
-              'Find the best \ncoffee for you',
+              'Find the best\ncoffee for you',
               style: TextStyle(
                 fontSize: 34.0,
                 fontWeight: FontWeight.bold,
@@ -87,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: TabBar(
               labelColor: ProjectColors.accentColor,
               unselectedLabelColor: ProjectColors.hintColor,
-              padding: EdgeInsets.symmetric(horizontal: 25.0),
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
               labelStyle: const TextStyle(
                 fontWeight: FontWeight.w500,
                 fontSize: 16.0,
@@ -175,11 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
           return GestureDetector(
             onTap: () {},
             child: CarouselItem(
-              imageSource: 'assets/images/coffee_${index + 1}.jpg',
-              name: 'Cappuccino',
-              subName: 'With Oat Milk',
-              price: '4.20',
-              stars: '4.5',
+              coffee: coffeeData[index],
             ),
           );
         },

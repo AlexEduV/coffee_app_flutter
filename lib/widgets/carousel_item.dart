@@ -1,24 +1,15 @@
+import 'package:coffee_app_flutter/model/coffee.dart';
 import 'package:coffee_app_flutter/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 
 class CarouselItem extends StatelessWidget {
-  final String imageSource;
-
-  final String name;
-  final String subName;
-
-  final String price;
-  final String stars;
+  final Coffee coffee;
 
   const CarouselItem({
     super.key,
-    required this.imageSource,
-    required this.name,
-    required this.subName,
-    required this.price,
-    required this.stars,
+    required this.coffee,
   });
 
   @override
@@ -51,7 +42,7 @@ class CarouselItem extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24.0),
                   image: DecorationImage(
-                    image: AssetImage(imageSource),
+                    image: AssetImage(coffee.imageSource),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -83,7 +74,7 @@ class CarouselItem extends StatelessWidget {
 
                       //star value
                       Text(
-                        stars,
+                        coffee.stars,
                         style: const TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 12.0,
@@ -102,7 +93,7 @@ class CarouselItem extends StatelessWidget {
           Row(
             children: [
               Text(
-                name,
+                coffee.name,
                 style: const TextStyle(
                   fontSize: 18.0,
                   color: Colors.white70,
@@ -115,7 +106,7 @@ class CarouselItem extends StatelessWidget {
           Row(
             children: [
               Text(
-                subName,
+                coffee.type,
                 style: const TextStyle(
                   fontSize: 13.0,
                   color: Colors.white38,
@@ -144,7 +135,7 @@ class CarouselItem extends StatelessWidget {
 
               Expanded(
                 child: Text(
-                  price,
+                  coffee.price,
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18.0,
