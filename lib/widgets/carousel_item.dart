@@ -26,7 +26,7 @@ class CarouselItem extends StatelessWidget {
     return Container(
       width: 180,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(39.0),
+        borderRadius: BorderRadius.circular(41.0),
         gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -36,15 +36,14 @@ class CarouselItem extends StatelessWidget {
           ]
         )
       ),
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.all(17.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 
           //picture
           Container(
-            height: 150,
-            width: 150,
+            height: 146,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24.0),
               image: DecorationImage(
