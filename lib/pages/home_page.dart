@@ -85,9 +85,10 @@ class _MyHomePageState extends State<MyHomePage> {
             child: TabBar(
               labelColor: ProjectColors.accentColor,
               unselectedLabelColor: ProjectColors.hintColor,
-              tabAlignment: TabAlignment.start,
+              labelStyle: const TextStyle(fontWeight: FontWeight.w500),
               labelPadding: const EdgeInsets.only(left: 0.0, right: 20,),
               dividerColor: Colors.transparent,
+              tabAlignment: TabAlignment.start,
               isScrollable: true,
               indicator: const CircleTabIndicator(
                 color: ProjectColors.accentColor,
@@ -128,7 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     if (index == 0) {
       return ListView.separated(
-        itemCount: 2,
+        itemCount: 3,
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0,),
         itemBuilder: (BuildContext context, int index) {
