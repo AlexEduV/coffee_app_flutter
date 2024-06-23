@@ -171,7 +171,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           BottomNavigationBarItem(
             icon: FaIcon(
-              FontAwesomeIcons.basketShopping,
+              FontAwesomeIcons.cartShopping,
             ),
             label: 'Cart'
           ),

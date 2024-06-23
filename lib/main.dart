@@ -77,7 +77,7 @@ class MyApp extends StatelessWidget {
           type: BottomNavigationBarType.fixed,
           selectedItemColor: ProjectColors.accentColor,
           unselectedItemColor: ProjectColors.hintColor,
-        )
+        ),
       ),
     );
   }
