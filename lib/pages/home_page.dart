@@ -34,11 +34,9 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              const Gap(10.0),
-
               //app bar
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -57,8 +55,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               ),
-
-              const Gap(20.0),
 
               //main text
               const Padding(
