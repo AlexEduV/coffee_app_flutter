@@ -1,17 +1,51 @@
- import 'package:coffee_app_flutter/pages/home_page.dart';
+ import 'package:coffee_app_flutter/model/coffee.dart';
+import 'package:coffee_app_flutter/pages/details_page.dart';
+import 'package:coffee_app_flutter/pages/home_page.dart';
 import 'package:coffee_app_flutter/style/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
+ /// The route configuration.
+ final GoRouter _router = GoRouter(
+   initialLocation: '/',
+   routes: <RouteBase>[
+     GoRoute(
+       path: '/',
+       name: 'root',
+       builder: (BuildContext context, GoRouterState state) {
+         return const MyHomePage();
+       },
+       routes: <RouteBase>[
+         GoRoute(
+           path: 'orderDetails',
+           name: 'orderDetails',
+           builder: (BuildContext context, GoRouterState state) {
+
+             Coffee coffee = state.extra as Coffee;
+
+             return DetailsPage(
+               coffee: coffee,
+             );
+           },
+         ),
+       ],
+     ),
+   ],
+ );
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+
+
+    return MaterialApp.router(
+      routerConfig: _router,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Coffee App',
       theme: ThemeData(
@@ -41,7 +75,6 @@ class MyApp extends StatelessWidget {
 
         )
       ),
-      home: const MyHomePage(),
     );
   }
 }
