@@ -1,5 +1,6 @@
 import 'package:coffee_app_flutter/model/data_model.dart';
 import 'package:coffee_app_flutter/style/colors.dart';
+import 'package:coffee_app_flutter/widgets/app_bar_button.dart';
 import 'package:coffee_app_flutter/widgets/specials_item.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -30,22 +31,18 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: Padding(
-          padding: const EdgeInsets.only(left: 25.0),
-          child: IconButton(
-            onPressed: () {},
-            icon: const FaIcon(
-                FontAwesomeIcons.grip,
-            ),
+          padding: const EdgeInsets.only(left: 25.0, top: 10.0),
+          child: AppBarButton(
+            onTap: () {},
+            icon: Icons.menu,
           ),
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 25.0),
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.person,
-              ),
+            padding: const EdgeInsets.only(right: 25.0, top: 10.0),
+            child: AppBarButton(
+              onTap: () {},
+              icon: Icons.person,
             ),
           ),
         ],
