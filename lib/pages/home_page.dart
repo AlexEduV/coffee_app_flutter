@@ -28,133 +28,139 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       backgroundColor: ProjectColors.pageBackgroundColor,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 25.0, top: 10.0),
-          child: AppBarButton(
-            onTap: () {},
-            icon: Icons.menu,
-          ),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 25.0, top: 10.0),
-            child: AppBarButton(
-              onTap: () {},
-              icon: Icons.person,
-            ),
-          ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
 
-            const Gap(20.0),
+              const Gap(10.0),
 
-            //main text
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.0),
-              child: Text(
-                'Find the best\ncoffee for you',
-                style: TextStyle(
-                  fontSize: 34.0,
-                  fontWeight: FontWeight.bold,
+              //app bar
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+
+                    //menu
+                    AppBarButton(
+                      onTap: () {},
+                      icon: Icons.menu,
+                    ),
+
+                    //profile
+                    AppBarButton(
+                      onTap: () {},
+                      icon: Icons.person,
+                    ),
+                  ],
                 ),
               ),
-            ),
 
-            const Gap(35.0),
+              const Gap(20.0),
 
-            //search bar
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.0),
-              child: SearchBar(
-                leading: Padding(
-                  padding: EdgeInsets.only(left: 10.0),
-                  child: Icon(
-                    Icons.search,
-                    color: ProjectColors.hintColor,
+              //main text
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 25.0),
+                child: Text(
+                  'Find the best\ncoffee for you',
+                  style: TextStyle(
+                    fontSize: 34.0,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                hintText: 'Find your coffee:',
               ),
-            ),
 
-            const Gap(30.0),
+              const Gap(35.0),
 
-            //tab bar
-            DefaultTabController(
-              length: 4,
-              child: TabBar(
-                labelColor: ProjectColors.accentColor,
-                unselectedLabelColor: ProjectColors.hintColor,
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                labelStyle: const TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 16.0,
+              //search bar
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 25.0),
+                child: SearchBar(
+                  leading: Padding(
+                    padding: EdgeInsets.only(left: 10.0),
+                    child: Icon(
+                      Icons.search,
+                      color: ProjectColors.hintColor,
+                    ),
+                  ),
+                  hintText: 'Find your coffee:',
                 ),
-                labelPadding: const EdgeInsets.only(left: 10.0, right: 10.0,),
-                dividerColor: Colors.transparent,
-                tabAlignment: TabAlignment.start,
-                isScrollable: true,
-                indicator: const CircleTabIndicator(
-                  color: ProjectColors.accentColor,
-                  radius: 3.0,
+              ),
+
+              const Gap(30.0),
+
+              //tab bar
+              DefaultTabController(
+                length: 4,
+                child: TabBar(
+                  labelColor: ProjectColors.accentColor,
+                  unselectedLabelColor: ProjectColors.hintColor,
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  labelStyle: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16.0,
+                  ),
+                  labelPadding: const EdgeInsets.only(left: 10.0, right: 10.0,),
+                  dividerColor: Colors.transparent,
+                  tabAlignment: TabAlignment.start,
+                  isScrollable: true,
+                  indicator: const CircleTabIndicator(
+                    color: ProjectColors.accentColor,
+                    radius: 3.0,
+                  ),
+                  onTap: (index) {
+                    setState(() {
+                      selectedTabPageIndex = index;
+                    });
+                  },
+                  tabs: const [
+                    Tab(text: 'Cappuccino',),
+                    Tab(text: 'Espresso',),
+                    Tab(text: 'Latte',),
+                    Tab(text: 'Flat White',),
+                  ],
                 ),
-                onTap: (index) {
+              ),
+
+              //horizontal list view
+              SizedBox(
+                height: 335,
+                child: getTabPageByIndex(selectedTabPageIndex),
+              ),
+
+              //'special for you' section
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 25.0),
+                child: Text(
+                  'Special for you',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 15.0,
+                  ),
+                ),
+              ),
+
+              const Gap(12.0),
+
+              //list view
+              SpecialsItem(
+                title: '5 coffee beans you must try!',
+                description: 'The coffee beans are roasted in an environmentally friendly way. This coffee tastes particularly mild and aromatic. The beans are made from 100% Arabica and are available in many different varieties with a particularly strong aroma.',
+                imageSource: '${DataModel.assetPath}coffee_3.jpg',
+                isExpanded: isSpecialExpanded,
+                onReadMoreButtonPressed: () {
                   setState(() {
-                    selectedTabPageIndex = index;
+                    isSpecialExpanded = !isSpecialExpanded;
                   });
                 },
-                tabs: const [
-                  Tab(text: 'Cappuccino',),
-                  Tab(text: 'Espresso',),
-                  Tab(text: 'Latte',),
-                  Tab(text: 'Flat White',),
-                ],
               ),
-            ),
 
-            //horizontal list view
-            SizedBox(
-              height: 335,
-              child: getTabPageByIndex(selectedTabPageIndex),
-            ),
+              const Gap(15.0),
 
-            //'special for you' section
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.0),
-              child: Text(
-                'Special for you',
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 15.0,
-                ),
-              ),
-            ),
-
-            const Gap(12.0),
-
-            //list view
-            SpecialsItem(
-              title: '5 coffee beans you must try!',
-              description: 'The coffee beans are roasted in an environmentally friendly way. This coffee tastes particularly mild and aromatic. The beans are made from 100% Arabica and are available in many different varieties with a particularly strong aroma.',
-              imageSource: '${DataModel.assetPath}coffee_3.jpg',
-              isExpanded: isSpecialExpanded,
-              onReadMoreButtonPressed: () {
-                setState(() {
-                  isSpecialExpanded = !isSpecialExpanded;
-                });
-              },
-            ),
-
-            const Gap(15.0),
-
-          ],
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
