@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25.0),
                 child: Text(
-                  'Find the best\ncoffee for you',
+                  'Find the best coffee for you',
                   style: TextStyle(
                     fontSize: 34.0,
                     fontWeight: FontWeight.bold,
