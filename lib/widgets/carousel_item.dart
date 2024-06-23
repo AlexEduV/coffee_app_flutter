@@ -3,6 +3,7 @@ import 'package:coffee_app_flutter/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 
 class CarouselItem extends StatelessWidget {
   final Coffee coffee;
@@ -30,7 +31,12 @@ class CarouselItem extends StatelessWidget {
         ),
       ),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+
+          // go to the details page;
+          context.goNamed('orderDetails', extra: coffee);
+
+        },
         borderRadius: borderRadius,
         child: Container(
           width: 180,
