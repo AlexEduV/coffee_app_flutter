@@ -12,7 +12,7 @@ class SpecialsItem extends StatelessWidget {
   final bool isExpanded;
 
 
-  SpecialsItem({
+  const SpecialsItem({
     required this.title,
     required this.description,
     required this.imageSource,
@@ -79,7 +79,7 @@ class SpecialsItem extends StatelessWidget {
                 const Gap(4.0),
 
                 Visibility(
-                  visible: !isExpanded && hasTextOverflow(
+                  visible: hasTextOverflow(
                     description,
                     Theme.of(context).textTheme.bodyMedium!,
                     MediaQuery.of(context).textScaleFactor,
@@ -87,12 +87,12 @@ class SpecialsItem extends StatelessWidget {
                   ),
                   child: InkWell(
                     onTap: onReadMoreButtonPressed,
-                    child: const Row(
+                    child: Row(
                       children: [
 
                         Text(
-                          'Read More',
-                          style: TextStyle(
+                          !isExpanded ? 'Read More' : 'Read Less',
+                          style: const TextStyle(
                             color: ProjectColors.accentColor,
                           ),
                         ),
