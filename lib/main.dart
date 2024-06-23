@@ -72,7 +72,11 @@ class MyApp extends StatelessWidget {
             ),
           ),
           shadowColor: WidgetStateProperty.all(Colors.transparent),
-
+        ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: ProjectColors.accentColor,
+          unselectedItemColor: ProjectColors.hintColor,
         )
       ),
     );

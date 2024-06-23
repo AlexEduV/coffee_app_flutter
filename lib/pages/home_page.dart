@@ -161,8 +161,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: ProjectColors.accentColor,
         iconSize: 22,
         items: const [
           BottomNavigationBarItem(
