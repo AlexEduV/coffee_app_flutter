@@ -15,10 +15,11 @@ class CarouselItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Container(
-      width: 180,
+    final BorderRadius borderRadius = BorderRadius.circular(30.0);
+
+    return Ink(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30.0),
+        borderRadius: borderRadius,
         gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -28,144 +29,151 @@ class CarouselItem extends StatelessWidget {
           ],
         ),
       ),
-      padding: const EdgeInsets.all(15.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-
-          //picture
-          Stack(
+      child: InkWell(
+        onTap: () {},
+        borderRadius: borderRadius,
+        child: Container(
+          width: 180,
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              Container(
-                height: 146,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.0),
-                  image: DecorationImage(
-                    image: AssetImage(coffee.imageSource),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+              //picture
+              Stack(
+                children: [
 
-              Positioned(
-                top: 0,
-                right: 0,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.7),
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(20.0),
-                      topRight: Radius.circular(15.0),
+                  Container(
+                    height: 146,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15.0),
+                      image: DecorationImage(
+                        image: AssetImage(coffee.imageSource),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 5.0),
-                  child: Row(
-                    children: [
 
-                      //star icon
-                      const FaIcon(
-                        FontAwesomeIcons.solidStar,
-                        color: ProjectColors.accentColor,
-                        size: 15,
-                      ),
-
-                      const Gap(4.0),
-
-                      //star value
-                      Text(
-                        coffee.stars,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 12.0,
+                  Positioned(
+                    top: 0,
+                    right: 0,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.black.withOpacity(0.7),
+                        borderRadius: const BorderRadius.only(
+                          bottomLeft: Radius.circular(20.0),
+                          topRight: Radius.circular(15.0),
                         ),
                       ),
-                    ],
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 5.0),
+                      child: Row(
+                        children: [
+
+                          //star icon
+                          const FaIcon(
+                            FontAwesomeIcons.solidStar,
+                            color: ProjectColors.accentColor,
+                            size: 15,
+                          ),
+
+                          const Gap(4.0),
+
+                          //star value
+                          Text(
+                            coffee.stars,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 12.0,
+                            ),
+                          ),
+                        ],
+                      )
+                    ),
                   )
-                ),
-              )
-            ],
-          ),
-
-          const Gap(15.0),
-
-          //name
-          Row(
-            children: [
-              Text(
-                coffee.name,
-                style: const TextStyle(
-                  fontSize: 18.0,
-                  color: Colors.white70,
-                ),
+                ],
               ),
-            ],
-          ),
 
-          //subName
-          Row(
-            children: [
-              Text(
-                coffee.type,
-                style: const TextStyle(
-                  fontSize: 13.0,
-                  color: Colors.white38,
-                ),
+              const Gap(15.0),
+
+              //name
+              Row(
+                children: [
+                  Text(
+                    coffee.name,
+                    style: const TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.white70,
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
 
-          const Gap(10.0),
-
-          //price and plus icon
-          Row(
-            children: [
-
-              //price
-              const Text(
-                '\$',
-                style: TextStyle(
-                  color: ProjectColors.accentColor,
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                ),
+              //subName
+              Row(
+                children: [
+                  Text(
+                    coffee.type,
+                    style: const TextStyle(
+                      fontSize: 13.0,
+                      color: Colors.white38,
+                    ),
+                  ),
+                ],
               ),
 
               const Gap(10.0),
 
-              Expanded(
-                child: Text(
-                  coffee.price,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+              //price and plus icon
+              Row(
+                children: [
 
-              //plus icon
-              Container(
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                  color: ProjectColors.accentColor,
-                  borderRadius: BorderRadius.circular(14.0),
-                ),
-                child: IconButton(
-                  icon: const Icon(
-                    Icons.add,
-                    size: 22,
-                    color: Colors.white,
+                  //price
+                  const Text(
+                    '\$',
+                    style: TextStyle(
+                      color: ProjectColors.accentColor,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                  onPressed: () {},
-                ),
+
+                  const Gap(10.0),
+
+                  Expanded(
+                    child: Text(
+                      coffee.price,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+
+                  //plus icon
+                  Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                      color: ProjectColors.accentColor,
+                      borderRadius: BorderRadius.circular(14.0),
+                    ),
+                    child: IconButton(
+                      icon: const Icon(
+                        Icons.add,
+                        size: 22,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ),
+
+                ],
               ),
 
             ],
           ),
-
-        ],
+        ),
       ),
     );
   }
