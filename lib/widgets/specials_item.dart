@@ -31,7 +31,7 @@ class SpecialsItem extends StatelessWidget {
           end: Alignment.bottomRight,
           colors: [
             ProjectColors.accentDarkColor,
-            Colors.black,
+            Colors.black12,
           ],
         ),
       ),

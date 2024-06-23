@@ -28,7 +28,7 @@ class AppBarButton extends StatelessWidget {
             end: Alignment.bottomRight,
             colors: [
               ProjectColors.accentDarkColor,
-              Colors.black,
+              Colors.black12,
             ],
           ),
           borderRadius: borderRadius,
