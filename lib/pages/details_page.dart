@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:coffee_app_flutter/model/coffee.dart';
-import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 
-import '../style/colors.dart';
-import '../widgets/app_bar_button.dart';
+import 'package:coffee_app_flutter/style/colors.dart';
+import 'package:coffee_app_flutter/widgets/app_bar_button.dart';
 
 class DetailsPage extends StatefulWidget {
 
@@ -31,27 +31,50 @@ class _DetailsPageState extends State<DetailsPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+              Stack(
+                children: [
 
-                    //menu
-                    AppBarButton(
-                      onTap: () {},
-                      icon: Icons.chevron_left,
+                  Container(
+                    height: 400,
+                    width: double.maxFinite,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(widget.coffee.imageSource),
+                        fit: BoxFit.fitWidth,
+                      ),
                     ),
+                  ),
 
-                    //profile
-                    AppBarButton(
-                      onTap: () {},
-                      icon: Icons.favorite,
+                  Positioned(
+                    top: 20.0,
+                    left: 25.0,
+                    right: 25.0,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+
+                        //menu
+                        AppBarButton(
+                          onTap: () {
+                            //go back
+                            context.go('/');
+                          },
+                          icon: Icons.chevron_left,
+                        ),
+
+                        //profile
+                        AppBarButton(
+                          onTap: () {},
+                          icon: Icons.favorite,
+                        ),
+
+                      ],
                     ),
+                  ),
+                ],
+              ),
 
-                  ],
-                ),
-              )
+
 
             ],
           ),
