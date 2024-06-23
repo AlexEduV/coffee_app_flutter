@@ -36,6 +36,7 @@ class AppBarButton extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Icon(
           icon,
+          color: Colors.white24,
           size: 25,
         ),
       ),
