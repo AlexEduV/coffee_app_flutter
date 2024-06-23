@@ -60,6 +60,7 @@ class CarouselItem extends StatelessWidget {
                     ),
                   ),
 
+                  //stars
                   Positioned(
                     top: 0,
                     right: 0,
@@ -120,7 +121,7 @@ class CarouselItem extends StatelessWidget {
                   Text(
                     coffee.type,
                     style: const TextStyle(
-                      fontSize: 13.0,
+                      fontSize: 12.0,
                       color: Colors.white38,
                     ),
                   ),
@@ -129,7 +130,7 @@ class CarouselItem extends StatelessWidget {
 
               const Gap(10.0),
 
-              //price and plus icon
+              //price and a plus icon
               Row(
                 children: [
 

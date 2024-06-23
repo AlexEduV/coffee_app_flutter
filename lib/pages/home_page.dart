@@ -202,13 +202,12 @@ class _MyHomePageState extends State<MyHomePage> {
       return ListView.separated(
         itemCount: coffeeData.length,
         scrollDirection: Axis.horizontal,
+        shrinkWrap: true,
+
         padding: const EdgeInsets.only(left: 20.0, top: 15.0, bottom: 15.0,),
         itemBuilder: (BuildContext context, int index) {
-          return GestureDetector(
-            onTap: () {},
-            child: CarouselItem(
-              coffee: coffeeData[index],
-            ),
+          return CarouselItem(
+            coffee: coffeeData[index],
           );
         },
         separatorBuilder: (context, index) {
