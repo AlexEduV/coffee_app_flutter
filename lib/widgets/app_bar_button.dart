@@ -17,27 +17,29 @@ class AppBarButton extends StatelessWidget {
 
     final BorderRadius borderRadius = BorderRadius.circular(12.0);
 
-    return InkWell(
-      onTap: onTap,
-      borderRadius: borderRadius,
-      child: Container(
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              ProjectColors.accentDarkColor,
-              Colors.black87,
-            ],
-          ),
-          borderRadius: borderRadius,
+    return Ink(
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            ProjectColors.accentDarkColor,
+            Colors.black,
+          ],
         ),
-        padding: const EdgeInsets.all(8.0),
-        child: Icon(
-          icon,
-          color: Colors.white24,
-          size: 25,
+        borderRadius: borderRadius,
+      ),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: borderRadius,
+        child: Container(
+          alignment: Alignment.center,
+          padding: const EdgeInsets.all(8.0),
+          child: Icon(
+            icon,
+            color: Colors.white24,
+            size: 25,
+          ),
         ),
       ),
     );
