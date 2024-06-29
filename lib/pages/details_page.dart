@@ -1,5 +1,6 @@
 import 'package:coffee_app_flutter/widgets/details_item.dart';
 import 'package:coffee_app_flutter/widgets/details_large_item.dart';
+import 'package:coffee_app_flutter/widgets/section_title.dart';
 import 'package:flutter/material.dart';
 
 import 'package:coffee_app_flutter/model/coffee.dart';
@@ -198,6 +199,26 @@ class _DetailsPageState extends State<DetailsPage> {
 
                 ],
               ),
+
+              const Gap(20.0),
+
+              const SectionTitle(
+                title: 'Description',
+              ),
+
+              const Gap(4.0),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Text(
+                  widget.coffee.description,
+                  style: const TextStyle(
+                    color: Colors.white60,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  maxLines: 2,
+                ),
+              )
 
 
 
