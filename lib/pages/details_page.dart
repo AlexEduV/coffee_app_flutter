@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:coffee_app_flutter/model/coffee.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
@@ -76,7 +77,6 @@ class _DetailsPageState extends State<DetailsPage> {
                   Padding(
                     padding: const EdgeInsets.only(top: 370),
                     child: Container(
-                      height: 200,
                       width: double.maxFinite,
                       padding: const EdgeInsets.all(25.0),
                       decoration: BoxDecoration(
@@ -109,9 +109,47 @@ class _DetailsPageState extends State<DetailsPage> {
                                 ),
                               ),
 
-                              const Gap(4.0),
+                              const Gap(16.0),
+
+                              Row(
+                                children: [
+
+                                  const Icon(
+                                    FontAwesomeIcons.solidStar,
+                                    color: ProjectColors.accentColor,
+                                    size: 18,
+                                  ),
+
+                                  const Gap(16.0),
+
+                                  Row(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Text(
+                                        widget.coffee.stars,
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold
+                                        ),
+                                      ),
+
+                                      const Gap(8.0),
+
+                                      Text(
+                                        '(${widget.coffee.reviews})',
+                                        style: const TextStyle(
+                                          color: Colors.white38,
+                                        ),
+                                      ),
+
+                                    ],
+                                  ),
 
 
+
+                                ],
+                              )
                               
                               
 
