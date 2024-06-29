@@ -1,4 +1,5 @@
 import 'package:coffee_app_flutter/widgets/details_item.dart';
+import 'package:coffee_app_flutter/widgets/details_large_item.dart';
 import 'package:flutter/material.dart';
 
 import 'package:coffee_app_flutter/model/coffee.dart';
@@ -172,6 +173,18 @@ class _DetailsPageState extends State<DetailsPage> {
                                     text: widget.coffee.ingredient,
                                   ),
 
+
+                                ],
+                              ),
+
+                              const Gap(16.0),
+
+                              const Row(
+                                children: [
+
+                                  DetailsLargeItem(
+                                    text: 'Medium Roasted',
+                                  )
 
                                 ],
                               )

@@ -3,14 +3,12 @@ import 'package:gap/gap.dart';
 
 import '../style/colors.dart';
 
-class DetailsItem extends StatelessWidget {
+class DetailsLargeItem extends StatelessWidget {
 
-  final IconData icon;
   final String text;
 
-  const DetailsItem({
+  const DetailsLargeItem({
     required this.text,
-    required this.icon,
     super.key,
   });
 
@@ -18,8 +16,6 @@ class DetailsItem extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
-      height: 61,
-      width: 61,
       decoration:BoxDecoration(
         gradient: const LinearGradient(
           begin: Alignment.topLeft,
@@ -33,26 +29,12 @@ class DetailsItem extends StatelessWidget {
       ),
       alignment: Alignment.center,
       padding: const EdgeInsets.all(8.0),
-      child: Column(
-        children: [
-
-          Icon(
-            icon,
-            color: ProjectColors.accentColor,
-            size: 22,
-          ),
-
-          const Gap(4.0),
-
-          Text(
-            text,
-            style: const TextStyle(
-              color: Colors.white38,
-              fontSize: 12,
-            ),
-          ),
-
-        ],
+      child: Text(
+        text,
+        style: const TextStyle(
+          color: Colors.white38,
+          fontSize: 12,
+        ),
       ),
     );
   }
