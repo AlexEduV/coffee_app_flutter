@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-
-import '../style/colors.dart';
 
 class DetailsLargeItem extends StatelessWidget {
 
@@ -16,6 +13,7 @@ class DetailsLargeItem extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
+      width: 138,
       decoration:BoxDecoration(
         gradient: const LinearGradient(
           begin: Alignment.topLeft,
