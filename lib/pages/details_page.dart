@@ -40,7 +40,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(widget.coffee.imageSource),
-                        fit: BoxFit.fitWidth,
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
