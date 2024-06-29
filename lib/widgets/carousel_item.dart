@@ -119,7 +119,7 @@ class CarouselItem extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    coffee.type,
+                    coffee.subName,
                     style: const TextStyle(
                       fontSize: 12.0,
                       color: Colors.white38,

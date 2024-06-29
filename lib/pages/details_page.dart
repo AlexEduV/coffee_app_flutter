@@ -101,7 +101,7 @@ class _DetailsPageState extends State<DetailsPage> {
                               const Gap(4.0),
                               
                               Text(
-                                widget.coffee.type,
+                                widget.coffee.subName,
                                 style: const TextStyle(
                                   color: Colors.white54,
                                   fontWeight: FontWeight.w500,
@@ -111,7 +111,7 @@ class _DetailsPageState extends State<DetailsPage> {
 
                               const Gap(4.0),
 
-                              
+
                               
                               
 
