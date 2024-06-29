@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:coffee_app_flutter/model/coffee.dart';
+import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:coffee_app_flutter/style/colors.dart';
@@ -71,6 +72,57 @@ class _DetailsPageState extends State<DetailsPage> {
                       ],
                     ),
                   ),
+
+                  Padding(
+                    padding: const EdgeInsets.only(top: 370),
+                    child: Container(
+                      height: 200,
+                      width: double.maxFinite,
+                      padding: const EdgeInsets.all(25.0),
+                      decoration: BoxDecoration(
+                        color: ProjectColors.coffeeBackground,
+                        borderRadius: BorderRadius.circular(32.0),
+                      ),
+                      child: Row(
+                        children: [
+
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+
+                              Text(
+                                widget.coffee.name,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 25,
+                                ),
+                              ),
+
+                              const Gap(4.0),
+                              
+                              Text(
+                                widget.coffee.type,
+                                style: const TextStyle(
+                                  color: Colors.white54,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 16,
+                                ),
+                              ),
+
+                              const Gap(4.0),
+
+                              
+                              
+                              
+
+
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+
                 ],
               ),
 

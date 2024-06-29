@@ -7,6 +7,7 @@ class ProjectColors {
 
   static const Color accentColor = Color(0xffc57c4d);
   static const Color accentDarkColor = Color(0xff272b33);
+  static const Color coffeeBackground = Color(0xff271a17);
 
 
   static const Color textInputBackgroundColor = Color(0xff151920);
