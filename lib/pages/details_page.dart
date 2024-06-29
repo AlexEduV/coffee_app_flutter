@@ -1,3 +1,4 @@
+import 'package:coffee_app_flutter/widgets/details_item.dart';
 import 'package:flutter/material.dart';
 
 import 'package:coffee_app_flutter/model/coffee.dart';
@@ -84,6 +85,7 @@ class _DetailsPageState extends State<DetailsPage> {
                         borderRadius: BorderRadius.circular(32.0),
                       ),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
 
                           Column(
@@ -97,8 +99,6 @@ class _DetailsPageState extends State<DetailsPage> {
                                   fontSize: 25,
                                 ),
                               ),
-
-                              const Gap(4.0),
                               
                               Text(
                                 widget.coffee.subName,
@@ -145,14 +145,36 @@ class _DetailsPageState extends State<DetailsPage> {
 
                                     ],
                                   ),
+                                ],
+                              ),
+                              
+                              
 
+
+                            ],
+                          ),
+
+                          Column(
+                            children: [
+
+                              Row(
+                                children: [
+
+                                  const DetailsItem(
+                                    icon: FontAwesomeIcons.mortarPestle,
+                                    text: 'Coffee',
+                                  ),
+
+                                  const Gap(16.0),
+
+                                  DetailsItem(
+                                    icon: FontAwesomeIcons.droplet,
+                                    text: widget.coffee.ingredient,
+                                  ),
 
 
                                 ],
                               )
-                              
-                              
-
 
                             ],
                           )
