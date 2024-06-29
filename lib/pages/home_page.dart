@@ -214,13 +214,16 @@ class _MyHomePageState extends State<MyHomePage> {
       );
     }
     else if (index == 1) {
-      return const Text('Inspiration');
+      return const Text('Espresso');
     }
     else if (index == 2) {
-      return const Text('Emotions');
+      return const Text('Latte');
+    }
+    else if (index == 3) {
+      return const Text('Flat White');
     }
 
-    return Container();
+    return const SizedBox.shrink();
   }
 }
 
