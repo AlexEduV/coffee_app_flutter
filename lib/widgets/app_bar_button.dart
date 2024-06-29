@@ -33,6 +33,17 @@ class AppBarButton extends StatelessWidget {
         onTap: onTap,
         borderRadius: borderRadius,
         child: Container(
+          decoration:BoxDecoration(
+            gradient: const LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                ProjectColors.accentDarkColor,
+                Colors.black,
+              ],
+            ),
+            borderRadius: borderRadius,
+          ),
           alignment: Alignment.center,
           padding: const EdgeInsets.all(8.0),
           child: Icon(
