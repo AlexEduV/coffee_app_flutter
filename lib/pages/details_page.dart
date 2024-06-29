@@ -80,7 +80,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     padding: const EdgeInsets.only(top: 370),
                     child: Container(
                       width: double.maxFinite,
-                      padding: const EdgeInsets.all(25.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 35.0, vertical: 25.0),
                       decoration: BoxDecoration(
                         color: ProjectColors.coffeeBackground,
                         borderRadius: BorderRadius.circular(32.0),
@@ -179,11 +179,11 @@ class _DetailsPageState extends State<DetailsPage> {
 
                               const Gap(16.0),
 
-                              const Row(
+                              Row(
                                 children: [
 
                                   DetailsLargeItem(
-                                    text: 'Medium Roasted',
+                                    text: '${widget.coffee.roastLevel} Roasted',
                                   )
 
                                 ],

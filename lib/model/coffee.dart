@@ -6,7 +6,7 @@ class Coffee {
   final String price;
   final String stars;
   final int reviews;
-  final Roast roastLevel;
+  final String roastLevel;
   final String ingredient;
   final String imageSource;
   final String description;
@@ -25,5 +25,3 @@ class Coffee {
   });
 
 }
-
-enum Roast { light, medium, mediumDark, dark }
