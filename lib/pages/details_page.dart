@@ -48,50 +48,29 @@ class _DetailsPageState extends State<DetailsPage> {
                 children: [
 
                   Container(
-                    height: 340,
+                    height: 450,
                     width: double.maxFinite,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(widget.coffee.imageSource),
                         fit: BoxFit.cover,
                       ),
+                      borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(32.0),
+                        bottomRight: Radius.circular(32.0),
+                      )
                     ),
                   ),
 
                   Positioned(
-                    top: 20.0,
-                    left: 25.0,
-                    right: 25.0,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-
-                        //menu
-                        AppBarButton(
-                          onTap: () {
-                            //go back
-                            context.go('/');
-                          },
-                          icon: Icons.chevron_left,
-                        ),
-
-                        //profile
-                        AppBarButton(
-                          onTap: () {},
-                          icon: Icons.favorite,
-                        ),
-
-                      ],
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(top: 300),
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
                     child: Container(
                       width: double.maxFinite,
                       padding: const EdgeInsets.symmetric(horizontal: 35.0, vertical: 25.0),
                       decoration: BoxDecoration(
-                        color: ProjectColors.coffeeBackground,
+                        color: ProjectColors.coffeeBackground.withOpacity(0.7),
                         borderRadius: BorderRadius.circular(32.0),
                       ),
                       child: Row(
@@ -109,7 +88,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                   fontSize: 25,
                                 ),
                               ),
-                              
+
                               Text(
                                 widget.coffee.subName,
                                 style: const TextStyle(
@@ -138,9 +117,9 @@ class _DetailsPageState extends State<DetailsPage> {
                                       Text(
                                         widget.coffee.stars,
                                         style: const TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold
+                                            color: Colors.white,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold
                                         ),
                                       ),
 
@@ -157,8 +136,8 @@ class _DetailsPageState extends State<DetailsPage> {
                                   ),
                                 ],
                               ),
-                              
-                              
+
+
 
 
                             ],
@@ -199,6 +178,33 @@ class _DetailsPageState extends State<DetailsPage> {
                           )
                         ],
                       ),
+                    ),
+                  ),
+
+                  Positioned(
+                    top: 20.0,
+                    left: 25.0,
+                    right: 25.0,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+
+                        //menu
+                        AppBarButton(
+                          onTap: () {
+                            //go back
+                            context.go('/');
+                          },
+                          icon: Icons.chevron_left,
+                        ),
+
+                        //profile
+                        AppBarButton(
+                          onTap: () {},
+                          icon: Icons.favorite,
+                        ),
+
+                      ],
                     ),
                   ),
 
