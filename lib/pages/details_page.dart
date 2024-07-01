@@ -48,7 +48,7 @@ class _DetailsPageState extends State<DetailsPage> {
                 children: [
 
                   Container(
-                    height: 370,
+                    height: 340,
                     width: double.maxFinite,
                     decoration: BoxDecoration(
                       image: DecorationImage(
@@ -86,7 +86,7 @@ class _DetailsPageState extends State<DetailsPage> {
                   ),
 
                   Padding(
-                    padding: const EdgeInsets.only(top: 330),
+                    padding: const EdgeInsets.only(top: 300),
                     child: Container(
                       width: double.maxFinite,
                       padding: const EdgeInsets.symmetric(horizontal: 35.0, vertical: 25.0),
@@ -272,50 +272,53 @@ class _DetailsPageState extends State<DetailsPage> {
                 ),
               ),
 
-              const Gap(20.0),
+              const Gap(40.0),
 
-              Row(
-                children: [
+              IntrinsicHeight(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
 
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SectionTitle(title: 'Price'),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SectionTitle(title: 'Price'),
 
-                      Padding(
-                        padding: const EdgeInsets.only(left: 25.0),
-                        child: Text(
-                          '\$ ${widget.coffee.price}',
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 25.0),
+                          child: Text(
+                            '\$ ${widget.coffee.price}',
+                            style: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
 
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 25.0),
-                      decoration: BoxDecoration(
-                        color: ProjectColors.accentColor,
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          'Buy Now',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
+                    Expanded(
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 25.0),
+                        decoration: BoxDecoration(
+                          color: ProjectColors.accentColor,
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'Buy Now',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  )
 
-                ],
-              )
+                  ],
+                ),
+              ),
 
 
 
