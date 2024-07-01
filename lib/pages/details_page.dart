@@ -1,5 +1,6 @@
 import 'package:coffee_app_flutter/widgets/details_page/details_item.dart';
 import 'package:coffee_app_flutter/widgets/details_page/details_large_item.dart';
+import 'package:coffee_app_flutter/widgets/read_more_button.dart';
 import 'package:coffee_app_flutter/widgets/section_title.dart';
 import 'package:flutter/material.dart';
 
@@ -230,33 +231,14 @@ class _DetailsPageState extends State<DetailsPage> {
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Visibility(
-                  visible: hasTextOverflow(
-                    widget.coffee.description,
-                    Theme.of(context).textTheme.bodyMedium!,
-                    MediaQuery.of(context).textScaleFactor,
-                    maxWidth: MediaQuery.of(context).size.width,
-                  ),
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        isDescriptionExpanded = !isDescriptionExpanded;
-                      });
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-
-                        Text(
-                          !isDescriptionExpanded ? 'Read More' : 'Read Less',
-                          style: const TextStyle(
-                            color: ProjectColors.accentColor,
-                          ),
-                        ),
-
-                      ],
-                    ),
-                  ),
+                child: ReadMoreButton(
+                  textToCheck: widget.coffee.description,
+                  onTap: () {
+                    setState(() {
+                      isDescriptionExpanded = !isDescriptionExpanded;
+                    });
+                  },
+                  isExpanded: isDescriptionExpanded,
                 ),
               ),
 

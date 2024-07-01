@@ -1,5 +1,6 @@
 import 'package:coffee_app_flutter/helpers/text_helper.dart';
 import 'package:coffee_app_flutter/style/colors.dart';
+import 'package:coffee_app_flutter/widgets/read_more_button.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -78,29 +79,12 @@ class SpecialsItem extends StatelessWidget {
 
                 const Gap(4.0),
 
-                Visibility(
-                  visible: hasTextOverflow(
-                    description,
-                    Theme.of(context).textTheme.bodyMedium!,
-                    MediaQuery.of(context).textScaleFactor,
-                    maxWidth: MediaQuery.of(context).size.width,
-                  ),
-                  child: InkWell(
-                    onTap: onReadMoreButtonPressed,
-                    child: Row(
-                      children: [
-
-                        Text(
-                          !isExpanded ? 'Read More' : 'Read Less',
-                          style: const TextStyle(
-                            color: ProjectColors.accentColor,
-                          ),
-                        ),
-
-                      ],
-                    ),
-                  ),
-                ),
+                ReadMoreButton(
+                  textToCheck: description,
+                  onTap: onReadMoreButtonPressed,
+                  isExpanded: isExpanded,
+                  alignment: MainAxisAlignment.start,
+                )
               ],
             ),
           ),
