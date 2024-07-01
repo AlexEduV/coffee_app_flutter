@@ -5,17 +5,22 @@ import '../../style/colors.dart';
 
 class DetailsItem extends StatelessWidget {
 
-  final IconData icon;
+  final IconData? icon;
+  final String? assetSource;
   final String text;
 
   const DetailsItem({
     required this.text,
-    required this.icon,
+    this.icon,
+    this.assetSource,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
+
+    const double iconSize = 22;
+    const Color iconColor = ProjectColors.accentColor;
 
     return Container(
       height: 61,
@@ -36,10 +41,17 @@ class DetailsItem extends StatelessWidget {
       child: Column(
         children: [
 
+          assetSource == null ?
           Icon(
             icon,
-            color: ProjectColors.accentColor,
-            size: 22,
+            color: iconColor,
+            size: iconSize,
+          ) :
+          Image.asset(
+            assetSource!,
+            color: iconColor,
+            height: iconSize,
+            width: iconSize,
           ),
 
           const Gap(4.0),

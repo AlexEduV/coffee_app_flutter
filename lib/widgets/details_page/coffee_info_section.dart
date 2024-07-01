@@ -104,7 +104,7 @@ class CoffeeInfoSection extends StatelessWidget {
                   children: [
 
                     const DetailsItem(
-                      icon: FontAwesomeIcons.mortarPestle,
+                      assetSource: 'assets/images/coffee-beans.png',
                       text: 'Coffee',
                     ),
 
