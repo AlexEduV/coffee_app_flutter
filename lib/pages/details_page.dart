@@ -13,8 +13,6 @@ import 'package:go_router/go_router.dart';
 import 'package:coffee_app_flutter/style/colors.dart';
 import 'package:coffee_app_flutter/widgets/app_bar_button.dart';
 
-import '../helpers/text_helper.dart';
-
 class DetailsPage extends StatefulWidget {
 
   final Coffee coffee;
@@ -50,7 +48,7 @@ class _DetailsPageState extends State<DetailsPage> {
                 children: [
 
                   Container(
-                    height: 400,
+                    height: 370,
                     width: double.maxFinite,
                     decoration: BoxDecoration(
                       image: DecorationImage(
@@ -88,7 +86,7 @@ class _DetailsPageState extends State<DetailsPage> {
                   ),
 
                   Padding(
-                    padding: const EdgeInsets.only(top: 370),
+                    padding: const EdgeInsets.only(top: 330),
                     child: Container(
                       width: double.maxFinite,
                       padding: const EdgeInsets.symmetric(horizontal: 35.0, vertical: 25.0),
@@ -273,6 +271,51 @@ class _DetailsPageState extends State<DetailsPage> {
                   }),
                 ),
               ),
+
+              const Gap(20.0),
+
+              Row(
+                children: [
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SectionTitle(title: 'Price'),
+
+                      Padding(
+                        padding: const EdgeInsets.only(left: 25.0),
+                        child: Text(
+                          '\$ ${widget.coffee.price}',
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  Expanded(
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 25.0),
+                      decoration: BoxDecoration(
+                        color: ProjectColors.accentColor,
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                      child: const Center(
+                        child: Text(
+                          'Buy Now',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+
+                ],
+              )
 
 
 
