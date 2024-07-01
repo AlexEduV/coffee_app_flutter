@@ -45,6 +45,7 @@ class _DetailsPageState extends State<DetailsPage> {
               Stack(
                 children: [
 
+                  //coffee photo cover
                   Container(
                     height: 450,
                     width: double.maxFinite,
@@ -88,6 +89,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                   ),
 
+                  //coffee info section
                   Positioned(
                       bottom: 0,
                       left: 0,

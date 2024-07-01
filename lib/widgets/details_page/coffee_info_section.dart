@@ -1,3 +1,4 @@
+import 'package:coffee_app_flutter/helpers/text_helper.dart';
 import 'package:coffee_app_flutter/model/coffee.dart';
 import 'package:coffee_app_flutter/style/colors.dart';
 import 'package:coffee_app_flutter/widgets/details_page/details_item.dart';
@@ -77,7 +78,7 @@ class CoffeeInfoSection extends StatelessWidget {
                       const Gap(8.0),
 
                       Text(
-                        '(${coffee.reviews})',
+                        '(${formatter.format(coffee.reviews.toInt())})',
                         style: const TextStyle(
                           color: Colors.white38,
                         ),

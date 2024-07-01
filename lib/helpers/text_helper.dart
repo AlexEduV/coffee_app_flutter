@@ -1,6 +1,7 @@
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 bool hasTextOverflow(
     String text,
@@ -19,3 +20,5 @@ bool hasTextOverflow(
 
   return textPainter.didExceedMaxLines;
 }
+
+var formatter = NumberFormat.decimalPattern('vi_VN');
