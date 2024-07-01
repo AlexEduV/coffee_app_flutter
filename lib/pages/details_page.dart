@@ -70,7 +70,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       width: double.maxFinite,
                       padding: const EdgeInsets.symmetric(horizontal: 35.0, vertical: 25.0),
                       decoration: BoxDecoration(
-                        color: ProjectColors.coffeeBackground.withOpacity(0.7),
+                        color: ProjectColors.coffeeBackground.withOpacity(0.9),
                         borderRadius: BorderRadius.circular(32.0),
                       ),
                       child: Row(
