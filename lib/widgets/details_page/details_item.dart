@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../style/colors.dart';
+import '../../style/colors.dart';
 
 class DetailsItem extends StatelessWidget {
 

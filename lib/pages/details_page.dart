@@ -1,5 +1,5 @@
-import 'package:coffee_app_flutter/widgets/details_item.dart';
-import 'package:coffee_app_flutter/widgets/details_large_item.dart';
+import 'package:coffee_app_flutter/widgets/details_page/details_item.dart';
+import 'package:coffee_app_flutter/widgets/details_page/details_large_item.dart';
 import 'package:coffee_app_flutter/widgets/section_title.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +10,8 @@ import 'package:go_router/go_router.dart';
 
 import 'package:coffee_app_flutter/style/colors.dart';
 import 'package:coffee_app_flutter/widgets/app_bar_button.dart';
+
+import '../helpers/text_helper.dart';
 
 class DetailsPage extends StatefulWidget {
 
@@ -25,6 +27,9 @@ class DetailsPage extends StatefulWidget {
 }
 
 class _DetailsPageState extends State<DetailsPage> {
+
+  late bool isDescriptionExpanded = false;
+
   @override
   Widget build(BuildContext context) {
 
@@ -216,9 +221,52 @@ class _DetailsPageState extends State<DetailsPage> {
                     color: Colors.white60,
                     fontWeight: FontWeight.w500,
                   ),
-                  maxLines: 2,
+                  maxLines: isDescriptionExpanded ? 10 : 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
-              )
+              ),
+
+              const Gap(4.0),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Visibility(
+                  visible: hasTextOverflow(
+                    widget.coffee.description,
+                    Theme.of(context).textTheme.bodyMedium!,
+                    MediaQuery.of(context).textScaleFactor,
+                    maxWidth: MediaQuery.of(context).size.width,
+                  ),
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        isDescriptionExpanded = !isDescriptionExpanded;
+                      });
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+
+                        Text(
+                          !isDescriptionExpanded ? 'Read More' : 'Read Less',
+                          style: const TextStyle(
+                            color: ProjectColors.accentColor,
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+
+              const Gap(20.0),
+
+              const SectionTitle(
+                  title: 'Size',
+              ),
+
+
 
 
 

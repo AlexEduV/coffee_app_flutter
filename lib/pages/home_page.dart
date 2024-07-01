@@ -1,13 +1,13 @@
 import 'package:coffee_app_flutter/model/data_model.dart';
 import 'package:coffee_app_flutter/style/colors.dart';
 import 'package:coffee_app_flutter/widgets/app_bar_button.dart';
-import 'package:coffee_app_flutter/widgets/specials_item.dart';
+import 'package:coffee_app_flutter/widgets/home_page/specials_item.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 
 import 'package:coffee_app_flutter/model/coffee.dart';
-import 'package:coffee_app_flutter/widgets/carousel_item.dart';
+import 'package:coffee_app_flutter/widgets/home_page/carousel_item.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
