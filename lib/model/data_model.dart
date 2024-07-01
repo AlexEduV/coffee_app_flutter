@@ -34,7 +34,7 @@ class DataModel {
         stars: '4.2',
         reviews: 4843,
         roastLevel: 'Light',
-        ingredient: 'Chocolate',
+        ingredient: 'Choco',
         imageSource: '${assetPath}coffee_2.jpg',
         description: 'A cappuccino is a beloved espresso-based hot coffee drink made with layering of espresso, steamed milk, and milk foam on top. The taste of cappuccinos can be described as creamy, smooth, and balanced. The combination of flavors and textures creates a delightful and comforting experience for many coffee enthusiasts.'
       ),
