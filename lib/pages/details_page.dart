@@ -164,41 +164,38 @@ class _DetailsPageState extends State<DetailsPage> {
                             ],
                           ),
 
-                          Column(
-                            children: [
+                          IntrinsicWidth(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
 
-                              Row(
-                                children: [
+                                Row(
+                                  children: [
 
-                                  const DetailsItem(
-                                    icon: FontAwesomeIcons.mortarPestle,
-                                    text: 'Coffee',
-                                  ),
+                                    const DetailsItem(
+                                      icon: FontAwesomeIcons.mortarPestle,
+                                      text: 'Coffee',
+                                    ),
 
-                                  const Gap(16.0),
+                                    const Gap(16.0),
 
-                                  DetailsItem(
-                                    icon: FontAwesomeIcons.droplet,
-                                    text: widget.coffee.ingredient,
-                                  ),
+                                    DetailsItem(
+                                      icon: FontAwesomeIcons.droplet,
+                                      text: widget.coffee.ingredient,
+                                    ),
 
 
-                                ],
-                              ),
+                                  ],
+                                ),
 
-                              const Gap(16.0),
+                                const Gap(16.0),
 
-                              Row(
-                                children: [
+                                DetailsLargeItem(
+                                  text: '${widget.coffee.roastLevel} Roasted',
+                                )
 
-                                  DetailsLargeItem(
-                                    text: '${widget.coffee.roastLevel} Roasted',
-                                  )
-
-                                ],
-                              )
-
-                            ],
+                              ],
+                            ),
                           )
                         ],
                       ),
