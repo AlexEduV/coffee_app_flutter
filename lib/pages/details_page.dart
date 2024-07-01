@@ -1,3 +1,4 @@
+import 'package:coffee_app_flutter/widgets/details_page/cup_size_selector_item.dart';
 import 'package:coffee_app_flutter/widgets/details_page/details_item.dart';
 import 'package:coffee_app_flutter/widgets/details_page/details_large_item.dart';
 import 'package:coffee_app_flutter/widgets/read_more_button.dart';
@@ -30,6 +31,9 @@ class DetailsPage extends StatefulWidget {
 class _DetailsPageState extends State<DetailsPage> {
 
   late bool isDescriptionExpanded = false;
+
+  final List<String> cupSizes = ['S', 'M', 'L'];
+  late int cupSizeSelectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -248,7 +252,27 @@ class _DetailsPageState extends State<DetailsPage> {
                   title: 'Size',
               ),
 
+              const Gap(4.0),
 
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  children: List.generate(cupSizes.length, (index) {
+
+                    return Expanded(
+                      child: CupSizeSelectorItem(
+                        onTap: () {
+                          setState(() {
+                            cupSizeSelectedIndex = index;
+                          });
+                        },
+                        isSelected: cupSizeSelectedIndex == index,
+                        text: cupSizes[index],
+                      ),
+                    );
+                  }),
+                ),
+              ),
 
 
 
