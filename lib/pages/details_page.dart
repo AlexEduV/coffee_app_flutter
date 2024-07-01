@@ -317,7 +317,7 @@ class _DetailsPageState extends State<DetailsPage> {
                 ),
               ),
 
-
+              const Gap(17.0),
 
             ],
           ),
