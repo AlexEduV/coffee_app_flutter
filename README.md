@@ -25,3 +25,7 @@ This is a non-commercial pet project, which is used to practice UI structure in 
 - State Management - setState
 - Data - static model with constant values
 - Navigation - GoRouter
+
+## Screenshots
+
+The Screenshots are available [here](https://www.behance.net/gallery/202217727/Flutter-Coffee-App)
