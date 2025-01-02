@@ -2,15 +2,26 @@
 
 A Coffee Mobile Flutter App
 
-## Getting Started
+## Summary
 
-This project is a starting point for a Flutter application.
+This is a non-commercial pet project, which is used to practice UI structure in Flutter
 
-A few resources to get you started if this is your first Flutter project:
+## Features
+- A beautiful Custom UI based on a Dribble design
+- static data model
+- GoRouter navigation
+- Font Awesome Icons
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Architecture
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- `helpers` - helper classes
+- `models` - static models
+- `pages` - full pages of the app
+- `style` - colors for the project in one place
+- `widgets` - custom widget classes
+
+## Stack
+
+- State Management - setState
+- Data - static model with constant values
+- Navigation - GoRouter
