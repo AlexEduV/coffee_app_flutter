@@ -1,4 +1,3 @@
-import 'package:coffee_app_flutter/helpers/text_helper.dart';
 import 'package:coffee_app_flutter/style/colors.dart';
 import 'package:coffee_app_flutter/widgets/read_more_button.dart';
 import 'package:flutter/material.dart';

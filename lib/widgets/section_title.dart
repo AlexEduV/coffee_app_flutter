@@ -1,4 +1,3 @@
-import 'package:coffee_app_flutter/style/colors.dart';
 import 'package:flutter/material.dart';
 
 class SectionTitle extends StatelessWidget {
